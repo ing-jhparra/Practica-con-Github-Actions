@@ -1,0 +1,9 @@
+name: Mi primer workflow
+on: [push]  # Se ejecuta cuando haces un push al repositorio
+
+jobs:
+  saludar:
+    runs-on: ubuntu-latest  # Sistema operativo de la máquina virtual
+    steps:
+      - name: Paso 1 - Hola mundo
+        run: echo "¡Hola, GitHub Actions!"
