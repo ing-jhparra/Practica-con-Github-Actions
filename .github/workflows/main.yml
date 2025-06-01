@@ -18,7 +18,7 @@ jobs:
       run: echo "¡Hola, GitHub Actions!"  # Comando a ejecutar
     
     - name: Paso 3 - Checkout
-      uses: echo "Paso 3"
+      run: echo "Paso 3"
       
     - name: Paso 4 - Saludar
       run: echo "Paso 4"
