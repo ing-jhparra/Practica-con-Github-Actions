@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest  # Sistema operativo de la máquina virtual
     steps:
       - name: Paso 1 - Hola mundo
-        run: echo "¡Hola, GitHub Actions!"
+        run: echo "==================== 1."
       - name: Paso 2 - Todo bien Mundo
-        run: echo "Jugando con Mundo!"
+        run: echo "==================== 2."
       - name: Paso 3 - Todo bien Mundo
-        run: echo "Jugando con Dos Mundo!"
+        run: echo "==================== 3."
       - name: Paso 4 - Todo bien Mundo
-        run: echo "Jugando con Dos Mundo!"
+        run: echo "==================== 4."
