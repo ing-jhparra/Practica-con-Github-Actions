@@ -52,7 +52,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           print("comentario: ~")'
   
   cuarto_job:
-    name: MMostrar salida estructurada
+    name: Mostrar salida estructurada
     needs: segundo_job
 
     runs-on: ubuntu-latest
@@ -67,4 +67,17 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           echo "  - verde"
           echo "  - azul"
           
-      
+  quinto_job:
+    name: Mostrar con heredoc
+    needs: segundo_job
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mostrar con heredoc
+        run: |
+          cat <<EOF
+          persona:
+             nombre: Carlota
+             edad: 5
+          EOF   
