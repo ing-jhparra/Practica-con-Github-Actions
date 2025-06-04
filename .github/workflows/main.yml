@@ -112,10 +112,6 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
         run: |
           # Primero obtenemos la fecha
           CURRENT_DATE=$(date)
-      
-          cat << EOF > output.log
-        
-          EOF
 
      # - name: Upload log artifact
      #   uses: actions/upload-artifact@v3
