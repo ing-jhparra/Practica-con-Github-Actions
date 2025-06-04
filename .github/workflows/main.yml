@@ -100,3 +100,62 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           echo "     edad: 30"
           echo "   - nombre: Carlota"
           echo "     edad: 5"
+        
+  generate_log:
+    needs: tercer_job, cuarto_job, quinto_job, sexto_job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Crear archivo de log
+        run: |
+          cat << 'EOF' > output.log
+          # Registro de ejecución - $(date)
+          
+          Datos básicos:
+          --------------
+          ciudad: Barquisimeto
+          comillas: "123"
+          edad: 25
+          temperatura: 36.6
+          masa: 1e6
+          activo: true
+          verificado: yes
+          descripcion: null
+          comentario: ~
+
+          Listas:
+          -------
+          colores
+            - rojo
+            - verde
+            - azul
+
+          Personas:
+          ---------
+          persona:
+             nombre: Carlota
+             edad: 5
+
+          usuarios:
+             - nombre: Damiana
+               edad: 30
+             - nombre: Carlota
+               edad: 5
+          EOF
+          
+          # Mostrar contenido del log en la consola
+          echo "📄 Contenido del archivo de log:"
+          cat output.log
+          
+          # Opcional: Subir el log como artifact
+          echo "🗄️ Guardando log como artifact..."
+          mkdir -p logs
+          cp output.log logs/execution_$(date +'%Y-%m-%d_%H-%M-%S').log
+        shell: bash
+
+      - name: Upload log artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: execution-logs
+          path: logs/
+          if-no-files-found: error
+          retention-days: 7
