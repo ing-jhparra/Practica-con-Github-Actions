@@ -7,4 +7,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Paso 1
+      - uses: actions/checkout@v4
+      - run: echo "Hola que tal"
