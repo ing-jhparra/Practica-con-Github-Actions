@@ -159,7 +159,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
 
 
       - name: Upload log artifact
-        uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v3
         with:
           name: execution-logs
           path: logs/
