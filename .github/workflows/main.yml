@@ -39,6 +39,8 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - name: Mostrar salida con Python
         run: |
           python -c '
+          print("Tipos Primitivos")
+          print("================")
           print("ciudad: Barquisimeto")
           print("comillas: \"123\"")
           print("edad: 25")
@@ -48,4 +50,21 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           print("verificado: yes")
           print("descripcion: None")
           print("comentario: ~")'
+  
+  cuarto_job:
+    name: MMostrar salida estructurada
+    needs: segundo_job
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mostrar listas con echo
+        run: |
+          echo "Listas"
+          echo "======"
+          echo "colores"
+          echo "  - rojo"
+          echo "  - verde"
+          echo "  - azul"
+          
       
