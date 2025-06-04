@@ -3,22 +3,8 @@ name: Mi primer workflow
 on: [push]  # Se ejecuta cuando haces push al repositorio
 
 jobs:
-  saludar:
-    runs-on: ubuntu-latest  # Sistema operativo del ejecutor
-    
+  primer_job:
+    runs-on: ubuntu-latest
+
     steps:
-    #Acciones Comunes para Empezar
-    #actions/checkout@v4: Descarga tu código al ejecutor
-    #actions/setup-node@v3: Configura Node.js
-    #actions/setup-python@v4: Configura Python
-    - name: Paso 1 - Checkout
-      uses: actions/checkout@v4  # Acción para descargar tu código
-      
-    - name: Paso 2 - Saludar
-      run: echo "¡Hola, GitHub Actions!"  # Comando a ejecutar
-    
-    - name: Paso 3 - Checkout
-      run: echo "Paso 3"
-      
-    - name: Paso 4 - Saludar
-      run: echo "Paso 4"
+      - name: Paso 1
