@@ -112,10 +112,11 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
         run: |
           # Primero obtenemos la fecha
           CURRENT_DATE=$(date)
-          
+      
           cat << EOF > output.log
+
           # Registro de ejecución - $CURRENT_DATE
-          
+
           Datos básicos:
           --------------
           ciudad: Barquisimeto
@@ -130,7 +131,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
 
           Listas:
           -------
-          colores
+          colores:
             - rojo
             - verde
             - azul
@@ -138,24 +139,15 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           Personas:
           ---------
           persona:
-             nombre: Carlota
-             edad: 5
+            nombre: Carlota
+            edad: 5
 
           usuarios:
-             - nombre: Damiana
-               edad: 30
-             - nombre: Carlota
-               edad: 5
+            - nombre: Damiana
+              edad: 30
+            - nombre: Carlota
+              edad: 5
           EOF
-          
-          # Mostrar contenido del log en la consola
-          echo "📄 Contenido del archivo de log:"
-          cat output.log
-          
-          # Opcional: Subir el log como artifact
-          echo "🗄️ Guardando log como artifact..."
-          mkdir -p logs
-          cp output.log logs/execution_$(date +'%Y-%m-%d_%H-%M-%S').log
 
       - name: Upload log artifact
         uses: actions/upload-artifact@v3
