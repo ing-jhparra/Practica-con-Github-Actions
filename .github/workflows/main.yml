@@ -77,7 +77,26 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - name: Mostrar con heredoc
         run: |
           cat <<EOF
+          Mapas/Diccionarios
+          ==================
           persona:
              nombre: Carlota
              edad: 5
-          EOF   
+          EOF
+  
+  sexto_job:
+    name: Mostrar con echo
+    needs: segundo_job
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mostrar con echo
+        run: |
+          echo "Listas de valores"
+          echo "================="
+          echo "usuarios"
+          echo "   - nombre: Damiana"
+          echo "     edad: 30"
+          echo "   - nombre: Carlota"
+          echo "     edad: 5"
