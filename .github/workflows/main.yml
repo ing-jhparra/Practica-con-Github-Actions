@@ -103,7 +103,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
         
   generate_log:
     name: Creacion de un archivo log
-    needs: tercer_job, cuarto_job, quinto_job, sexto_job
+    needs: [tercer_job, cuarto_job, quinto_job, sexto_job]
     
     runs-on: ubuntu-latest
     
