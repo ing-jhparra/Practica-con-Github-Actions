@@ -39,13 +39,13 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - name: Mostrar salida con Python
         run: |
           python -c '
-            print("ciudad: Barquisimeto")
-            print("comillas: \"123\"")
-            print("edad: 25")
-            print("temperatura: 36.6")
-            print("masa: 1e6")
-            print("activo: True")
-            print("verificado: yes")
-            print("descripcion: None")
-            print("comentario: ~")'
+          print("ciudad: Barquisimeto")
+          print("comillas: \"123\"")
+          print("edad: 25")
+          print("temperatura: 36.6")
+          print("masa: 1e6")
+          print("activo: True")
+          print("verificado: yes")
+          print("descripcion: None")
+          print("comentario: ~")'
       
