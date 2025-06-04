@@ -11,8 +11,9 @@ jobs:
       - run: echo "Hola que tal"
       - run: echo "Fin"
   segundo_job:
+    needs: primer_job
     runs-on: ubuntu-latest
-
+    
     steps:
       - uses: actions/checkout@v4
       - run: echo "Continuo luego del primero"
