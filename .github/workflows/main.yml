@@ -30,7 +30,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - run: echo "Termine el Segundo"
   
   tercer_job:
-    name: Sintaxis
+    name: Mostrar salida con Python
     needs: segundo_job
 
     runs-on: ubuntu-latest
@@ -47,5 +47,5 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
             print("activo: True")
             print("verificado: yes")
             print("descripcion: None")
-            print("comentario: ~") 
+            print("comentario: ~")'
       
