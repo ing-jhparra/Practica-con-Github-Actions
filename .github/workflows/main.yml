@@ -148,6 +148,16 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
                edad: 5
           EOF
 
+          # Mostrar contenido del log en la consola
+          echo "📄 Contenido del archivo de log:"
+          cat output.log
+          
+          # Opcional: Subir el log como artifact
+          echo "🗄️ Guardando log como artifact..."
+          mkdir -p logs
+          cp output.log logs/execution_$(date +'%Y-%m-%d_%H-%M-%S').log
+
+
      # - name: Upload log artifact
      #   uses: actions/upload-artifact@v3
      #   with:
