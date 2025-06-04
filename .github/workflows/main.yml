@@ -6,7 +6,8 @@ on: [push]  # define el evento que activará tu workflow. En este caso,
 
 jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecutarse 
             # en paralelo por defecto, o secuencialmente si especificas dependencias.
-  primer_job:    # Este es el identificador de tu primer trabajo 
+  primer_job:    # Este es el identificador de tu primer trabajo
+    name: Ejecucion del primer paso # Un nombre amigable alworkflow 
     runs-on: ubuntu-latest # especifica el ambiente en el que se ejecutará este job. 
                            # se ejecutará en una máquina virtual con la última versión de Ubuntu 
                            # (un sistema operativo Linux) proporcionada por GitHub
@@ -18,6 +19,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - run: echo "Hola que tal"  # Este paso simplemente ejecuta un comando de shell
       - run: echo "Fin"
   segundo_job:
+    name: Ejecucion del segundo paso
     needs: primer_job    # Indica que este job, depende de que primer_job se complete exitosamente 
                          # antes de poder empezar a ejecutarse
     runs-on: ubuntu-latest
