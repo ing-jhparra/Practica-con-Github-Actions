@@ -113,6 +113,41 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           # Primero obtenemos la fecha
           CURRENT_DATE=$(date)
 
+          cat << 'EOF' > output.log
+          # Registro de ejecución - $(date)
+          
+          Datos básicos:
+          --------------
+          ciudad: Barquisimeto
+          comillas: "123"
+          edad: 25
+          temperatura: 36.6
+          masa: 1e6
+          activo: true
+          verificado: yes
+          descripcion: null
+          comentario: ~
+
+          Listas:
+          -------
+          colores
+            - rojo
+            - verde
+            - azul
+
+          Personas:
+          ---------
+          persona:
+             nombre: Carlota
+             edad: 5
+
+          usuarios:
+             - nombre: Damiana
+               edad: 30
+             - nombre: Carlota
+               edad: 5
+          EOF
+
      # - name: Upload log artifact
      #   uses: actions/upload-artifact@v3
      #   with:
