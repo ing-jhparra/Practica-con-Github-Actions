@@ -30,13 +30,13 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - run: echo "Termine el Segundo"
   
   tercer_job:
-    name: Mostrar salida con Python
+    name: Mostrar Tipos Primitivos
     needs: segundo_job
 
     runs-on: ubuntu-latest
     
     steps:
-      - name: Mostrar salida con Python
+      - name: Mostrar sTipos Primitivos
         run: |
           python -c '
           print("Tipos Primitivos")
@@ -52,13 +52,13 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           print("comentario: ~")'
   
   cuarto_job:
-    name: Mostrar listas con echo
+    name: Mostrar Listas
     needs: segundo_job
 
     runs-on: ubuntu-latest
     
     steps:
-      - name: Mostrar listas con echo
+      - name: Mostrar Listas
         run: |
           echo "Listas"
           echo "======"
@@ -68,13 +68,13 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           echo "  - azul"
           
   quinto_job:
-    name: Mostrar con heredoc
+    name: Mostrar Mapas/Diccionarios
     needs: segundo_job
 
     runs-on: ubuntu-latest
     
     steps:
-      - name: Mostrar con heredoc
+      - name: Mostrar Mapas/Diccionarios
         run: |
           cat <<EOF
           Mapas/Diccionarios
@@ -85,13 +85,13 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           EOF
   
   sexto_job:
-    name: Mostrar con echo
+    name: Mostrar Listas de valores
     needs: segundo_job
 
     runs-on: ubuntu-latest
     
     steps:
-      - name: Mostrar con echo
+      - name: Mostrar Listas de valores
         run: |
           echo "Listas de valores"
           echo "================="
