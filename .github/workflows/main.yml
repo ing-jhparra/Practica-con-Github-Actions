@@ -1,14 +1,21 @@
-name: Mi primer workflow
+name: Mi primer workflow # Un nombre amigable alworkflow
 
-on: [push]  # Se ejecuta cuando haces push al repositorio
+on: [push]  # define el evento que activará tu workflow. En este caso, 
+            # el workflow se ejecutará cada vez que alguien haga un push 
+            # (envíe cambios) a cualquier rama de tu repositorio
 
-jobs:
-  primer_job:
-    runs-on: ubuntu-latest
+jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecutarse 
+            # en paralelo por defecto, o secuencialmente si especificas dependencias.
+  primer_job:    # Este es el identificador de tu primer trabajo 
+    runs-on: ubuntu-latest # especifica el ambiente en el que se ejecutará este job. 
+                           # se ejecutará en una máquina virtual con la última versión de Ubuntu 
+                           # (un sistema operativo Linux) proporcionada por GitHub
 
-    steps:
-      - uses: actions/checkout@v4
-      - run: echo "Hola que tal"
+    steps:       # Dentro de cada job, hay una secuencia de pasos que se ejecutan en orden.
+      - uses: actions/checkout@v4 # Este es un action predefinido y muy común. Su función es 
+                                  # descargar el código de tu repositorio en la máquina virtual 
+                                  # donde se está ejecutando el job.
+      - run: echo "Hola que tal"  # Este paso simplemente ejecuta un comando de shell
       - run: echo "Fin"
   segundo_job:
     needs: primer_job
