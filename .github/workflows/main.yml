@@ -52,7 +52,7 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           print("comentario: ~")'
   
   cuarto_job:
-    name: Mostrar salida estructurada
+    name: Mostrar listas con echo
     needs: segundo_job
 
     runs-on: ubuntu-latest
