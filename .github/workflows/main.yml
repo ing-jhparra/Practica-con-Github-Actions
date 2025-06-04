@@ -102,13 +102,19 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           echo "     edad: 5"
         
   generate_log:
+    name: Creacion de un archivo log
     needs: tercer_job, cuarto_job, quinto_job, sexto_job
+    
     runs-on: ubuntu-latest
+    
     steps:
-      - name: Crear archivo de log
+      - name: Crear el archivo de log
         run: |
-          cat << 'EOF' > output.log
-          # Registro de ejecución - $(date)
+          # Primero obtenemos la fecha
+          CURRENT_DATE=$(date)
+          
+          cat << EOF > output.log
+          # Registro de ejecución - $CURRENT_DATE
           
           Datos básicos:
           --------------
@@ -150,7 +156,6 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           echo "🗄️ Guardando log como artifact..."
           mkdir -p logs
           cp output.log logs/execution_$(date +'%Y-%m-%d_%H-%M-%S').log
-        shell: bash
 
       - name: Upload log artifact
         uses: actions/upload-artifact@v3
