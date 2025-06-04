@@ -18,7 +18,8 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
       - run: echo "Hola que tal"  # Este paso simplemente ejecuta un comando de shell
       - run: echo "Fin"
   segundo_job:
-    needs: primer_job
+    needs: primer_job    # Indica que este job, depende de que primer_job se complete exitosamente 
+                         # antes de poder empezar a ejecutarse
     runs-on: ubuntu-latest
     
     steps:
