@@ -100,7 +100,16 @@ jobs:       # Los jobs son unidades de trabajo independientes que pueden ejecuta
           echo "     edad: 30"
           echo "   - nombre: Carlota"
           echo "     edad: 5"
-        
+  septimo_job:
+    name: Mostrar Listas de valores
+    needs: segundo_job
+
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mostrar Listas de valores
+        run:  ls -l
+           
   generate_log:
     name: Creacion de un archivo log
     needs: [tercer_job, cuarto_job, quinto_job, sexto_job]
